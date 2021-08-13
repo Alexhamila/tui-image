@@ -528,6 +528,7 @@ class Text extends Component {
 
     if (!obj) {
       this.fire(events.ADD_TEXT, {
+        test: 'tessssst',
         originPosition: {
           x: originPointer.x,
           y: originPointer.y,
@@ -536,8 +537,6 @@ class Text extends Component {
           x: e.clientX || 0,
           y: e.clientY || 0,
         },
-        text: e,
-        test: 'tessssst',
       });
     }
   }

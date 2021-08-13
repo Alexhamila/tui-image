@@ -9617,6 +9617,7 @@ var Text = function (_Component) {
 
       if (!obj) {
         this.fire(_consts.eventNames.ADD_TEXT, {
+          test: 'tessssst',
           originPosition: {
             x: originPointer.x,
             y: originPointer.y
@@ -9624,9 +9625,7 @@ var Text = function (_Component) {
           clientPosition: {
             x: e.clientX || 0,
             y: e.clientY || 0
-          },
-          text: e,
-          test: 'tessssst'
+          }
         });
       }
     }
