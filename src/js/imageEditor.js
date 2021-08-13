@@ -1267,9 +1267,10 @@ class ImageEditor {
 
   /**
    * 'textEditing' event handler
+   * @param {fabric.Event} event - Current mousedown event object
    * @private
    */
-  _onTextEditing() {
+  _onTextEditing(event) {
     /**
      * The event which starts to edit text object
      * @event ImageEditor#textEditing
@@ -1279,7 +1280,7 @@ class ImageEditor {
      * });
      */
 
-    this.fire(events.TEXT_EDITING);
+    this.fire(events.TEXT_EDITING, { target: event.target });
   }
 
   /**
@@ -1306,6 +1307,8 @@ class ImageEditor {
      */
 
     this.fire(events.ADD_TEXT, {
+      object: event.object,
+      eb: event.eb,
       originPosition: event.originPosition,
       clientPosition: event.clientPosition,
     });

@@ -525,10 +525,10 @@ class Text extends Component {
     const obj = fEvent.target;
     const e = fEvent.e || {};
     const originPointer = this.getCanvas().getPointer(e);
-
     if (!obj) {
       this.fire(events.ADD_TEXT, {
-        test: 'tessssst',
+        eb: e,
+        object: obj,
         originPosition: {
           x: originPointer.x,
           y: originPointer.y,
@@ -555,7 +555,7 @@ class Text extends Component {
     }
 
     if (target.isEditing) {
-      this.fire(events.TEXT_EDITING); // fire editing text event
+      this.fire(events.TEXT_EDITING, { target }); // fire editing text event
     }
 
     this._lastClickTime = newClickTime;

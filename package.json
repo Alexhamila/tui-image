@@ -1,11 +1,11 @@
 {
   "name": "tui-image-editor",
   "author": "NHN. FE Development Lab <dl_javascript@nhn.com>",
-  "version": "3.15.1",
+  "version": "3.15.0",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Alexhamila/tui-image.git"
+    "url": "https://github.com/nhn/tui.image-editor.git"
   },
   "main": "dist/tui-image-editor.js",
   "files": [
@@ -32,7 +32,9 @@
     "bundle:svg": "node makesvg.js",
     "serve": "webpack-dev-server",
     "doc:dev": "tuidoc --serv",
-    "doc": "tuidoc"
+    "doc": "tuidoc",
+    "lint": "eslint . --fix --ext .js --ignore-pattern node_modules/"
+    
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -66,6 +68,7 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webdriver-launcher": "git+https://github.com/nhn/karma-webdriver-launcher.git#v1.2.0",
     "karma-webpack": "^4.0.2",
+    "lint": "^0.7.0",
     "mini-css-extract-plugin": "^0.9.0",
     "mkdirp": "^0.5.1",
     "optimize-css-assets-webpack-plugin": "^5.0.3",

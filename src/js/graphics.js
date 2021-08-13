@@ -37,8 +37,15 @@ import {
 import Resize from '@/component/resize';
 import ResizeDrawingMode from '@/drawingMode/resize';
 
-const { extend, stamp, isArray, isString, forEachArray, forEachOwnProperties, CustomEvents } =
-  snippet;
+const {
+  extend,
+  stamp,
+  isArray,
+  isString,
+  forEachArray,
+  forEachOwnProperties,
+  CustomEvents,
+} = snippet;
 const DEFAULT_CSS_MAX_WIDTH = 1000;
 const DEFAULT_CSS_MAX_HEIGHT = 800;
 const EXTRA_PX_FOR_PASTE = 10;
@@ -1079,7 +1086,9 @@ class Graphics {
       crossOrigin: 'Anonymous',
     });
 
-    this.getCanvas().add(obj).setActiveObject(obj);
+    this.getCanvas()
+      .add(obj)
+      .setActiveObject(obj);
   }
 
   /**

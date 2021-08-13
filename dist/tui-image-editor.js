@@ -9648,7 +9648,7 @@ var Text = function (_Component) {
       }
 
       if (target.isEditing) {
-        this.fire(_consts.eventNames.TEXT_EDITING); // fire editing text event
+        this.fire(_consts.eventNames.TEXT_EDITING, { target: target }); // fire editing text event
       }
 
       this._lastClickTime = newClickTime;
@@ -18698,12 +18698,13 @@ var ImageEditor = function () {
 
     /**
      * 'textEditing' event handler
+     * @param {fabric.Event} event - Current mousedown event object
      * @private
      */
 
   }, {
     key: '_onTextEditing',
-    value: function _onTextEditing() {
+    value: function _onTextEditing(event) {
       /**
        * The event which starts to edit text object
        * @event ImageEditor#textEditing
@@ -18713,7 +18714,7 @@ var ImageEditor = function () {
        * });
        */
 
-      this.fire(_consts.eventNames.TEXT_EDITING);
+      this.fire(_consts.eventNames.TEXT_EDITING, { target: event.target });
     }
 
     /**
