@@ -9613,23 +9613,19 @@ var Text = function (_Component) {
     value: function _fireAddText(fEvent) {
       var obj = fEvent.target;
       var e = fEvent.e || {};
-      /*
-      const originPointer = this.getCanvas().getPointer(e);
-      */
+      var originPointer = this.getCanvas().getPointer(e);
       if (!obj) {
         this.fire(_consts.eventNames.ADD_TEXT, {
           eb: e,
-          object: obj
-          /*
+          object: obj,
           originPosition: {
             x: originPointer.x,
-            y: originPointer.y,
+            y: originPointer.y
           },
           clientPosition: {
             x: e.clientX || 0,
-            y: e.clientY || 0,
-          },
-          */
+            y: e.clientY || 0
+          }
         });
       }
     }
@@ -18747,6 +18743,8 @@ var ImageEditor = function () {
        */
 
       this.fire(_consts.eventNames.ADD_TEXT, {
+        object: event.object,
+        eb: event.eb,
         originPosition: event.originPosition,
         clientPosition: event.clientPosition
       });
